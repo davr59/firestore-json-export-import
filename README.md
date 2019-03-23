@@ -28,7 +28,7 @@ Para exportar, establecer la cuenta de servicio de firebase en service-account-f
 Los datos son exportados a data-exported.json. 
 Correr:
 
-```node firestore2json.js```
+```npm run-script export```
 
 For importing, set firebase service account in service-account-json2firestore.json.
 Data is imported from data-imported.json
@@ -38,7 +38,7 @@ Para importar, establecer la cuenta de servicio de firebase en service-account-j
 Los datos son importados de data-imported.json
 Correr:
 
-```node json2firetore.js```
+```npm run-script import```
 
 [Service account - How to generate new private key](https://firebase.google.com/docs/admin/setup?authuser=0#add_firebase_to_your_app)
 
