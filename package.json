@@ -1,0 +1,15 @@
+{
+  "name": "firestore-json-export-import",
+  "version": "1.0.0",
+  "description": "firestore-json-export-import",
+  "dependencies": {
+    "firebase-admin": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "export": "node firestore2json.js",
+    "import": "node json2firestore.js"
+  },
+  "author": "davr59",
+  "private": true
+}
