@@ -21,7 +21,7 @@ exports.schema = {
 ```
 
 For exporting, set firebase service account in service-account-firestore2json.json. 
-Data is exported to data-exported.json
+Data is exported to data-exported.json.
 Run:
 
 Para exportar, establecer la cuenta de servicio de firebase en service-account-firestore2json.json. 
@@ -31,11 +31,11 @@ Correr:
 ```npm run-script export```
 
 For importing, set firebase service account in service-account-json2firestore.json.
-Data is imported from data-imported.json
+Data is imported from data-imported.json.
 Run:
 
 Para importar, establecer la cuenta de servicio de firebase en service-account-json2firestore.json.
-Los datos son importados de data-imported.json
+Los datos son importados de data-imported.json.
 Correr:
 
 ```npm run-script import```
