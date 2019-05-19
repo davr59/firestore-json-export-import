@@ -30,9 +30,10 @@ function firestore2json(serviceAccount, schema, outputFilePath) {
     return current;
   };
 
-  firestore2json(admin.firestore(), { ...schema }, {}).then(res =>
-    fs.writeFileSync(outputFilePath, JSON.stringify(res, null, 2), 'utf8')
-  );
+  firestore2json(admin.firestore(), { ...schema }, {}).then(res => {
+    fs.writeFileSync(outputFilePath, JSON.stringify(res, null, 2), 'utf8');
+    console.log('done');
+  });
 }
 
 exports.firestore2json = firestore2json;
