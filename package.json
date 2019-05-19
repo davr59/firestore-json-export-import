@@ -7,8 +7,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "export": "node firestore2json.js",
-    "import": "node json2firestore.js"
+    "export": "node example-firestore2json.js",
+    "import": "node example-json2firestore.js"
   },
   "author": "davr59",
   "private": true
