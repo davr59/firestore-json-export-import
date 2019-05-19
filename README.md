@@ -12,7 +12,7 @@ Set your collections and subcollections names in schema.js:
 Establecer los nombres de las colecciones y subcolecciones en schema.js:
 
 ```
-exports.schema = {
+schema = {
   collection1: {},
   collection2: {
     subcollection1: {}
