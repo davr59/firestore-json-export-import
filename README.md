@@ -20,29 +20,33 @@ schema = {
 };
 ```
 
-For exporting, set firebase service account in service-account.json. 
-Data is exported to db.json.
-Run:
+Set firebase service account in service-account.json. 
 
-Para exportar, establecer la cuenta de servicio de firebase en service-account.json. 
-Los datos son exportados a db.json. 
-Correr:
-
-```npm run-script export```
-
-For importing, set firebase service account in service-account.json.
-Data is imported from db.json.
-Run:
-
-Para importar, establecer la cuenta de servicio de firebase en service-account.json.
-Los datos son importados de db.json.
-Correr:
-
-```npm run-script import```
+Establecer la cuenta de servicio de firebase en service-account.json. 
 
 [Service account - How to generate new private key](https://firebase.google.com/docs/admin/setup?authuser=0#add_firebase_to_your_app)
 
 [Cuenta de servicio - Cómo generar una nueva llave privada](https://firebase.google.com/docs/admin/setup?authuser=0#add_firebase_to_your_app)
+
+### Exporting | Exportar
+
+Data is exported to db.json.
+Run:
+
+Los datos son exportados a db.json. 
+Ejecutar:
+
+```npm run-script export```
+
+### Importing | Importar
+
+Data is imported from db.json.
+Run:
+
+Los datos son importados de db.json.
+Ejecutar:
+
+```npm run-script import```
 
 ## Want to help? | ¿Quiere ayudar?
 
