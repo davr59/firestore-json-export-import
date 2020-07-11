@@ -1,9 +1,3 @@
-/* eslint-disable function-paren-newline */
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable arrow-parens */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-console */
-
 const admin = require('firebase-admin');
 const fs = require('fs');
 
@@ -13,17 +7,24 @@ function firestore2json(serviceAccount, schema, outputFilePath) {
   const f2j = async (db, _schema, _current) => {
     const current = _current;
     await Promise.all(
-      Object.keys(_schema).map(collection =>
+      Object.keys(_schema).map((collection) =>
         db
           .collection(collection)
           .get()
-          .then(data => {
+          .then((data) => {
             const promises = [];
-            data.forEach(doc => {
+            data.forEach((doc) => {
               if (!current[collection]) {
                 current[collection] = { __type__: 'collection' };
               }
-              current[collection][doc.id] = doc.data();
+              const docData = doc.data();
+              for (let key of Object.keys(docData)) {
+                if (!docData[key].path) {
+                  continue;
+                }
+                docData[key] = { _path: docData[key].path };
+              }
+              current[collection][doc.id] = docData;
               promises.push(
                 f2j(
                   db.collection(collection).doc(doc.id),
@@ -39,7 +40,7 @@ function firestore2json(serviceAccount, schema, outputFilePath) {
     return current;
   };
 
-  f2j(admin.firestore(), { ...schema }, {}).then(res => {
+  f2j(admin.firestore(), { ...schema }, {}).then((res) => {
     fs.writeFileSync(outputFilePath, JSON.stringify(res, null, 2), 'utf8');
     console.log('done');
   });

@@ -1,9 +1,3 @@
-/* eslint-disable function-paren-newline */
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable arrow-parens */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-console */
-
 const admin = require('firebase-admin');
 const fs = require('fs');
 
@@ -12,15 +6,17 @@ function json2firestore(serviceAccount, schema, inputFilePath) {
 
   const j2f = (json, db, _schema) =>
     Promise.all(
-      Object.keys(_schema).map(collection => {
+      Object.keys(_schema).map((collection) => {
         const promises = [];
-        Object.keys(json[collection]).forEach(doc => {
+        Object.keys(json[collection]).forEach((doc) => {
           const docId = doc;
           if (doc === '__type__') return;
           const docData = { ...json[collection][doc] };
-          Object.keys(docData).forEach(data => {
-            // eslint-disable-next-line no-underscore-dangle
+          Object.keys(docData).forEach((data) => {
             if (docData[data] && docData[data].__type__) delete docData[data];
+            if (docData[data]._path) {
+              docData[data] = db.doc(docData[data]._path);
+            }
           });
           promises.push(
             db
@@ -41,7 +37,7 @@ function json2firestore(serviceAccount, schema, inputFilePath) {
     );
 
   j2f(JSON.parse(fs.readFileSync(inputFilePath, 'utf8')), admin.firestore(), {
-    ...schema
+    ...schema,
   }).then(() => console.log('done'));
 }
 
