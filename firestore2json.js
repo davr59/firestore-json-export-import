@@ -19,7 +19,7 @@ function firestore2json(serviceAccount, schema, outputFilePath) {
               }
               const docData = doc.data();
               for (let key of Object.keys(docData)) {
-                if (!docData[key].path) {
+                if (!docData[key]._path) {
                   continue;
                 }
                 docData[key] = { _path: docData[key].path };
