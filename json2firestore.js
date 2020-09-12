@@ -8,6 +8,9 @@ function json2firestore(serviceAccount, schema, inputFilePath) {
     Promise.all(
       Object.keys(_schema).map((collection) => {
         const promises = [];
+        if (!json[collection]) {
+          return;
+        }
         Object.keys(json[collection]).forEach((doc) => {
           const docId = doc;
           if (doc === '__type__') return;
