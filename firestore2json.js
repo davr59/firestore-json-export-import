@@ -20,7 +20,7 @@ async function firestore2json(serviceAccount, schema, outputFilePath) {
     dbCollection.forEach((doc) => {
       const docData = doc.data();
       Object.keys(docData).forEach((key) => {
-        if (!docData[key]._path) {
+        if (!docData[key] || !docData[key]._path) {
           return;
         }
         docData[key] = { _path: docData[key].path };
