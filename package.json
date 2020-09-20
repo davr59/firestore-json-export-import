@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "firestore-json-export-import",
   "dependencies": {
-    "firebase-admin": "^9.1.1"
+    "firebase-admin": "^9.2.0"
   },
   "devDependencies": {
     "eslint": "^7.9.0",
