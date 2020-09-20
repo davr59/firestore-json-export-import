@@ -12,7 +12,7 @@ async function firestore2json(serviceAccount, schema, outputFilePath) {
     const subcollections = await doc.ref.listCollections();
     for (let subcollection of subcollections) {
       if (!_schema[collection_id][subcollection.id]) {
-        return;
+        continue;
       }
       const dbSubcollection = await subcollection.get();
       data[collection_id][doc.id][subcollection.id] = {};
