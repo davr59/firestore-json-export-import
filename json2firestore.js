@@ -25,9 +25,7 @@ async function json2firestore(serviceAccount, schema, inputFilePath) {
     }
   };
 
-  await j2f(JSON.parse(fs.readFileSync(inputFilePath, 'utf8')), admin.firestore(), {
-    ...schema,
-  });
+  await j2f(JSON.parse(fs.readFileSync(inputFilePath, 'utf8')), admin.firestore(), schema);
   console.log('done');
 }
 
