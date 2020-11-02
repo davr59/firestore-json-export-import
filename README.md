@@ -38,6 +38,10 @@ Ejecutar:
 
 ```npm run-script export```
 
+or
+
+```npm run pull```
+
 ### Importing | Importar
 
 Data is imported from db.json.
@@ -47,6 +51,10 @@ Los datos son importados de db.json.
 Ejecutar:
 
 ```npm run-script import```
+
+or
+
+```npm run push```
 
 ## Want to help? | ¿Quiere ayudar?
 
