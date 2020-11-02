@@ -10,13 +10,28 @@ async function json2firestore(serviceAccount, schema, inputFilePath) {
         continue;
       }
       for (let doc of Object.keys(json[collection])) {
-        const docId = doc;
         if (doc === '__type__') continue;
+        const docId = doc;
         const docData = { ...json[collection][doc] };
         Object.keys(docData).forEach((data) => {
-          if (docData[data] && docData[data].__type__) delete docData[data];
-          if (docData[data] && docData[data]._path) {
+          if (docData[data] && docData[data].__type__) {
+            delete docData[data];
+            return;
+          }
+          if (docData[data] && docData[data]._path && Object.keys(docData[data]).length === 1) {
             docData[data] = db.doc(docData[data]._path);
+            return;
+          }
+          if (
+            docData[data] &&
+            docData[data]._latitude !== undefined &&
+            docData[data]._longitude !== undefined &&
+            Object.keys(docData[data]).length === 2
+          ) {
+            docData[data] = new admin.firestore.GeoPoint(
+              docData[data]._latitude,
+              docData[data]._longitude
+            );
           }
         });
         await db.collection(collection).doc(docId).set(docData);
