@@ -11,6 +11,8 @@
     "eslint-plugin-import": "^2.20.2"
   },
   "scripts": {
+    "pull": "node example-firestore2json.js",
+    "push": "node example-json2firestore.js",
     "export": "node example-firestore2json.js",
     "import": "node example-json2firestore.js"
   },
