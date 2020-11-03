@@ -28,31 +28,27 @@ Establecer la cuenta de servicio de firebase en service-account.json.
 
 [Cuenta de servicio - Cómo generar una nueva llave privada](https://firebase.google.com/docs/admin/setup?authuser=0#add_firebase_to_your_app)
 
-### Exporting | Exportar
+### Exporting - Pull | Exportar
 
 Data is exported to db.json.
-Run:
+Run any of these 2 commands:
 
 Los datos son exportados a db.json. 
-Ejecutar:
+Ejecutar cualquiera de estos 2 commandos:
 
-```npm run-script export```
-
-or
+```npm run export```
 
 ```npm run pull```
 
-### Importing | Importar
+### Importing - Push | Importar
 
 Data is imported from db.json.
-Run:
+Run any of these 2 commands:
 
 Los datos son importados de db.json.
-Ejecutar:
+Ejecutar cualquiera de estos 2 commandos:
 
-```npm run-script import```
-
-or
+```npm run import```
 
 ```npm run push```
 
