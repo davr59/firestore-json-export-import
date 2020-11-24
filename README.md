@@ -11,7 +11,7 @@ Set your collections and subcollections names in schema.js:
 
 Establecer los nombres de las colecciones y subcolecciones en schema.js:
 
-```
+```javascript
 schema = {
   collection1: {},
   collection2: {
@@ -36,9 +36,13 @@ Run any of these 2 commands:
 Los datos son exportados a db.json. 
 Ejecutar cualquiera de estos 2 commandos:
 
-```npm run export```
+```bash
+npm run export
+```
 
-```npm run pull```
+```bash
+npm run pull
+```
 
 ### Importing - Push | Importar
 
@@ -48,9 +52,13 @@ Run any of these 2 commands:
 Los datos son importados de db.json.
 Ejecutar cualquiera de estos 2 commandos:
 
-```npm run import```
+```bash
+npm run import
+```
 
-```npm run push```
+```bash
+npm run push
+```
 
 ## Want to help? | ¿Quiere ayudar?
 
