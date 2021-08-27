@@ -1,4 +1,4 @@
-# Firestore JSON Export-Import | Firestore JSON Exportar-Importar
+# firestore json export-import | firestore json exportar-importar
 
 Node.js Functions to export data from Firestore to JSON and import data from JSON to Firestore. Taken from [Gist sturmenta/firestore2json.js](https://gist.github.com/sturmenta/cbbe898227cb1eaca7f85d0191eaec7e) and [Copy/Export a Cloud Firestore Database by Bruno Braga](https://blog.cloudboost.io/copy-export-a-cloud-firestore-database-388cde99259b).
 
