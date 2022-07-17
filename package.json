@@ -2,23 +2,29 @@
   "name": "firestore-json-export-import",
   "version": "1.0.1",
   "description": "firestore-json-export-import",
-  "dependencies": {
-    "firebase-admin": "^9.3.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-standard": "^16.0.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.2",
-    "nodemon": "^2.0.6"
-  },
   "scripts": {
     "pull": "node example-firestore2json.js",
     "push": "node example-json2firestore.js",
     "export": "node example-firestore2json.js",
-    "import": "node example-json2firestore.js"
+    "import": "node example-json2firestore.js",
+    "lint": "eslint .",
+    "lint-fix": "npm run lint -- --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,md,html,css,scss,json}": "prettier --write"
   },
   "author": "davr59",
   "private": true
